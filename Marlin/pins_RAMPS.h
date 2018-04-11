@@ -108,10 +108,10 @@
 #define E0_ENABLE_PIN      24
 #define E0_CS_PIN          42
 
-#define E1_STEP_PIN        36
-#define E1_DIR_PIN         34
-#define E1_ENABLE_PIN      30
-#define E1_CS_PIN          44
+//#define E1_STEP_PIN        36
+//#define E1_DIR_PIN         34
+//#define E1_ENABLE_PIN      30
+//#define E1_CS_PIN          44
 
 
 #if ENABLED(HAVE_TMC2208)
@@ -198,6 +198,8 @@
 //
 // Heaters / Fans
 //
+#define FAN2_PIN  -1
+#define KosselFAN2_PIN  44
 #ifndef MOSFET_D_PIN
   #define MOSFET_D_PIN  -1
 #endif
@@ -317,19 +319,21 @@
     #define LCD_PINS_ENABLE     42
     #define LCD_PINS_D4         65
     #define LCD_PINS_D5         66
-    #define LCD_PINS_D6         44
+    #define LCD_PINS_D6         57
     #define LCD_PINS_D7         64
 
   #else
 
     #if ENABLED(CR10_STOCKDISPLAY)
 
-      #define LCD_PINS_RS       27
-      #define LCD_PINS_ENABLE   29
-      #define LCD_PINS_D4       25
-
+      #define LCD_PINS_RS       16
+      #define LCD_PINS_ENABLE   17
+      #define LCD_PINS_D4       23
+      #define LCD_PINS_D5 25
+      #define LCD_PINS_D6 27
+      #define LCD_PINS_D7 29
       #if DISABLED(NEWPANEL)
-        #define BEEPER_PIN      37
+        #define BEEPER_PIN      33
       #endif
 
     #else
@@ -421,7 +425,7 @@
     #elif ENABLED(VIKI2) || ENABLED(miniVIKI)
 
       #define DOGLCD_CS         45
-      #define DOGLCD_A0         44
+      #define DOGLCD_A0         23
       #define LCD_SCREEN_ROT_180
 
       #define BEEPER_PIN        33
@@ -441,8 +445,8 @@
       #define DOGLCD_CS         29
       #define DOGLCD_A0         27
 
-      #define BEEPER_PIN        23
-      #define LCD_BACKLIGHT_PIN 33
+      #define BEEPER_PIN        33
+      #define LCD_BACKLIGHT_PIN 67
 
       #define BTN_EN1           35
       #define BTN_EN2           37
